@@ -23,7 +23,7 @@ public class Compra {
     private MedioPago medioPago;
 
     @ManyToOne
-    @JoinColumn(name = "id_Espectador", referencedColumnName = "idPersona", nullable = false)
+    @JoinColumn(name = "id_Espectador", referencedColumnName = "id_Persona", nullable = false)
     private Espectador espectador;
 
     // Este constructor vacio es necesario para que funcione JPA

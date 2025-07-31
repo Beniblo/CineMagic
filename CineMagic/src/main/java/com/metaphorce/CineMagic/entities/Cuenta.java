@@ -1,9 +1,12 @@
 package com.metaphorce.CineMagic.entities;
-import  jakarta.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Cuenta")
 public class Cuenta {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Cuenta")
@@ -15,12 +18,13 @@ public class Cuenta {
     @Column(nullable = false)
     private String contraseña;
 
-    @OneToOne(mappedBy = "cuenta")
+    @OneToOne
+    @JoinColumn(name = "id_Persona", referencedColumnName = "id_Persona", nullable = false)
+    @JsonBackReference
     private Persona persona;
 
-    // Este constructor vacio es necesario para que funcione JPA
-    public Cuenta() {
-    }
+    // Constructor vacío para JPA
+    public Cuenta() {}
 
     // Getters y setters
     public Integer getIdCuenta() {
@@ -55,3 +59,4 @@ public class Cuenta {
         this.persona = persona;
     }
 }
+

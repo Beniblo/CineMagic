@@ -1,4 +1,6 @@
 package com.metaphorce.CineMagic.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -7,6 +9,7 @@ import java.util.List;
 public class Pelicula {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_Pelicula")
     private Integer idPelicula;
 
     @Column(nullable = false)
@@ -17,7 +20,9 @@ public class Pelicula {
     @Column(length = 1000)
     private String sinopsis;
 
-    @OneToMany(mappedBy = "pelicula", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pelicula", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    @JsonIgnore
     private List<Funcion> funciones;
 
     // Este constructor vacio es necesario para que funcione JPA

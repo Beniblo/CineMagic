@@ -14,4 +14,13 @@ public enum Sala {
     public String getLabel() {
         return label;
     }
+
+    public static Sala fromLabel(String label) {
+        for (Sala sala : Sala.values()) {
+            if (sala.getLabel().equalsIgnoreCase(label)) {
+                return sala;
+            }
+        }
+        throw new IllegalArgumentException("Sala desconocida: " + label);
+    }
 }

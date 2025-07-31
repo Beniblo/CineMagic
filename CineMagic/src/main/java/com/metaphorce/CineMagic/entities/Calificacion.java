@@ -17,11 +17,11 @@ public class Calificacion {
     private LocalDate fecha;
 
     @ManyToOne
-    @JoinColumn(name = "id_Pelicula", referencedColumnName = "idPelicula", nullable = false)
+    @JoinColumn(name = "id_Pelicula", referencedColumnName = "id_Pelicula", nullable = false)
     private Pelicula pelicula;
 
     @ManyToOne
-    @JoinColumn(name = "id_Espectador", referencedColumnName = "idPersona", nullable = false)
+    @JoinColumn(name = "id_Espectador", referencedColumnName = "id_Persona", nullable = false)
     private Espectador espectador;
 
     // Este constructor vacio es necesario para que funcione JPA
