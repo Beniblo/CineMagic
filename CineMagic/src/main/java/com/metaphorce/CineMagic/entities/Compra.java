@@ -1,4 +1,5 @@
 package com.metaphorce.CineMagic.entities;
+import com.metaphorce.CineMagic.converters.MedioPagoConverter;
 import com.metaphorce.CineMagic.enums.MedioPago;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
@@ -18,7 +19,7 @@ public class Compra {
     @Column(nullable = false, precision = 8, scale = 2)
     private BigDecimal total;
 
-    @Enumerated(EnumType.STRING)
+    @Convert(converter = MedioPagoConverter.class)
     @Column(nullable = false)
     private MedioPago medioPago;
 
