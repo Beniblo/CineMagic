@@ -106,5 +106,7 @@ CREATE TABLE Resenia (
     fecha DATE NOT NULL,
     contenido TEXT NOT NULL,
     id_Espectador INT NOT NULL,
-    FOREIGN KEY (id_Espectador) REFERENCES Espectador(id_Persona)
+    id_Pelicula INT NOT NULL,
+    FOREIGN KEY (id_Espectador) REFERENCES Espectador(id_Persona),
+    FOREIGN KEY (id_Pelicula) REFERENCES Pelicula(id_Pelicula)
 );

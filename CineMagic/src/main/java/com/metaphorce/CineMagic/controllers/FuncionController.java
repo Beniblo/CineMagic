@@ -1,13 +1,14 @@
 package com.metaphorce.CineMagic.controllers;
+
 import com.metaphorce.CineMagic.entities.Funcion;
 import com.metaphorce.CineMagic.repositories.FuncionRepository;
 import com.metaphorce.CineMagic.services.FuncionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,7 @@ public class FuncionController {
     private FuncionRepository funcionRepository;
 
     @Autowired
-    private FuncionService funcionService; // <-- ¡Esto faltaba!
+    private FuncionService funcionService;
 
     @GetMapping("/porPelicula")
     public ResponseEntity<List<Funcion>> obtenerFuncionesPorPelicula(@RequestParam Integer idPelicula) {
@@ -41,5 +42,24 @@ public class FuncionController {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(funciones);
+    }
+
+    @PutMapping("/{id}/horario")
+    public ResponseEntity<?> actualizarHorarioFuncion(
+            @PathVariable Integer id,
+            @RequestParam String fecha,
+            @RequestParam String hora) {
+        try {
+            // Parseamos los strings a LocalDate y LocalTime
+            LocalDate nuevaFecha = LocalDate.parse(fecha);
+            LocalTime nuevaHora = LocalTime.parse(hora);
+
+            Funcion actualizada = funcionService.actualizarHorario(id, nuevaFecha, nuevaHora);
+            return ResponseEntity.ok(actualizada);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Error al actualizar horario: " + e.getMessage());
+        }
     }
 }

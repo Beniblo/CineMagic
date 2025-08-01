@@ -32,7 +32,7 @@ INSERT INTO Administrador (id_Persona) VALUES (2);
 
 -- Película
 INSERT INTO Pelicula (titulo, genero, duracion, sinopsis) VALUES
-('Los 4 Fantasticos: primeros pasos	', 'Acción', 115, 'La película "Los 4 Fantásticos: Primeros pasos" se ambienta en un mundo retro-futurista inspirado en los años 60, donde la Primera Familia de Marvel enfrenta su desafío más terrorífico hasta la fecha. Obligados a equilibrar sus roles como héroes con la fortaleza de su vínculo familiar, deben defender la Tierra de un dios espacial voraz llamado Galactus y su enigmático Heraldo, Silver Surfer. La película también introduce a Franklin Richards, un mutante Omega que podría ser clave en el futuro del UCM y en los eventos de Avengers: Secret Wars.'),
+('Los 4 Fantasticos: primeros pasos', 'Acción', 115, 'La película "Los 4 Fantásticos: Primeros pasos" se ambienta en un mundo retro-futurista inspirado en los años 60, donde la Primera Familia de Marvel enfrenta su desafío más terrorífico hasta la fecha. Obligados a equilibrar sus roles como héroes con la fortaleza de su vínculo familiar, deben defender la Tierra de un dios espacial voraz llamado Galactus y su enigmático Heraldo, Silver Surfer. La película también introduce a Franklin Richards, un mutante Omega que podría ser clave en el futuro del UCM y en los eventos de Avengers: Secret Wars.'),
 ('Jurassic World: el renacer', 'Aventura', 134, 'La película "Jurassic World: El Renacer" se desarrolla cinco años después de los eventos de "Jurassic World: Dominion". La trama sigue a Zora Bennett, una experta en operaciones encubiertas, quien es contratada para dirigir a un equipo de especialistas en una misión secreta para obtener material genético de tres dinosaurios prehistóricos. La operación se ve interrumpida por un barco volcado por dinosaurios acuáticos, llevando a los miembros del equipo a una isla donde descubren un secreto siniestro que ha estado oculto durante décadas. La película combina elementos de aventura, acción y un toque de humor, aunque algunos críticos han señalado que la dirección y el guion han sido mediocres.');
 
 -- Función
@@ -63,5 +63,3 @@ INSERT INTO Calificacion (estrellas, fecha, id_Pelicula, id_Espectador) VALUES
 
 INSERT INTO Resenia (fecha, contenido, id_Espectador) VALUES
 ('2025-08-01', 'Es fantastico...', 3);
-
-

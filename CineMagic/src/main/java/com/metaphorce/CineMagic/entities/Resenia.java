@@ -21,11 +21,12 @@ public class Resenia {
     @JoinColumn(name = "id_Espectador", referencedColumnName = "id_Persona", nullable = false)
     private Espectador espectador;
 
-    // Este constructor vacio es necesario para que funcione JPA
-    public Resenia() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "id_Pelicula", referencedColumnName = "id_Pelicula", nullable = false)
+    private Pelicula pelicula;
 
-    // Getters y Setters
+    public Resenia() {}
+
     public Integer getIdResenia() {
         return idResenia;
     }
@@ -57,4 +58,13 @@ public class Resenia {
     public void setEspectador(Espectador espectador) {
         this.espectador = espectador;
     }
+
+    public Pelicula getPelicula() {
+        return pelicula;
+    }
+
+    public void setPelicula(Pelicula pelicula) {
+        this.pelicula = pelicula;
+    }
 }
+
