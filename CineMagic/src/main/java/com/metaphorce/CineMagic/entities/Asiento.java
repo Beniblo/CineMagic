@@ -1,4 +1,5 @@
 package com.metaphorce.CineMagic.entities;
+import com.metaphorce.CineMagic.converters.NumeroFilaConverter;
 import com.metaphorce.CineMagic.enums.EstadoAsiento;
 import com.metaphorce.CineMagic.enums.Fila;
 import com.metaphorce.CineMagic.enums.NumeroFila;
@@ -16,7 +17,7 @@ public class Asiento {
     @Column(nullable = false)
     private Fila fila;
 
-    @Enumerated(EnumType.STRING)
+    @Convert(converter = NumeroFilaConverter.class)
     @Column(nullable = false)
     private NumeroFila numeroFila;
 

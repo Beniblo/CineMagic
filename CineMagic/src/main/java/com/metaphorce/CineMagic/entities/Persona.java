@@ -1,5 +1,6 @@
 package com.metaphorce.CineMagic.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -16,6 +17,7 @@ public class Persona {
     private String nombre;
     private String correo;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL)
     @JsonManagedReference
     private Cuenta cuenta;

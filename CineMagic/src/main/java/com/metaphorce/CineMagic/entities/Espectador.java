@@ -1,6 +1,5 @@
 package com.metaphorce.CineMagic.entities;
 import jakarta.persistence.*;
-
 @Entity
 @Table(name = "Espectador")
 @PrimaryKeyJoinColumn(name = "id_Persona")

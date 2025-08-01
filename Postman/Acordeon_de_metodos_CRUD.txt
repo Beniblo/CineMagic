@@ -1,0 +1,39 @@
+Pelicula:
+
+1. Crear una película (POST)
+
+URL: http://localhost:8080/CineMagicAPI/Pelicula/crear
+
+{
+  "titulo": "titulo",
+  "genero": "genero",
+  "duracion": x,
+  "sinopsis": "sipnosis"
+}
+
+2. Listar todas las películas (GET)
+
+URL: http://localhost:8080/CineMagicAPI/Pelicula/listar
+
+3. Buscar película por título (GET)
+
+URL:
+http://localhost:8080/CineMagicAPI/Pelicula/buscar?titulo=x
+
+4. Actualizar una película (PUT)
+
+URL:
+http://localhost:8080/CineMagicAPI/Pelicula/actualizar?titulo=x
+
+{
+  "titulo": "titulo",
+  "genero": "genero",
+  "duracion": x,
+  "sinopsis": "sipnosis"
+}
+
+5. Eliminar una película (DELETE)
+
+URL:
+http://localhost:8080/CineMagicAPI/Pelicula/eliminar?titulo=x
+

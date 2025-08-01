@@ -1,7 +1,5 @@
 package com.metaphorce.CineMagic.entities;
-
 import jakarta.persistence.*;
-
 @Entity
 @Table(name = "DetalleCompra")
 public class DetalleCompra {

@@ -1,12 +1,12 @@
-package com.metaphorce.CineMagic.services;
+package com.metaphorce.CineMagic.services.impl;
 
 import com.metaphorce.CineMagic.entities.Pelicula;
 import com.metaphorce.CineMagic.repositories.PeliculaRepository;
+import com.metaphorce.CineMagic.services.PeliculaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PeliculaServiceImpl implements PeliculaService {
